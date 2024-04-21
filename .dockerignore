@@ -13,3 +13,4 @@ app.json
 heroku.yml
 Dockerfile
 README.md
+docker-compose.yml
