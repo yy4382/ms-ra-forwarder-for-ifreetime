@@ -1,4 +1,12 @@
 # ms-ra-forwarder-for-ifreetime
+
+> [!NOTE]
+> 新 Cloudflare Workers 版本现已可用！[yy4382/read-aloud](https://github.com/yy4382/read-aloud)
+> 
+> 如果没有特殊需求，建议自建 Cloudflare Workers 版本。
+>
+> 如果不想要自建，也可以使用我在 CF Workers 上部署的版本，可以在 [新项目的置顶 Issue](https://github.com/yy4382/read-aloud/issues/1) 中找到。
+
 从 ms-ra-forwarder fork 这个项目的初衷是为了能够在爱阅书香中听“晓晓”念书。
 
 由于原项目不支持爱阅书香，所以想要把原项目和 [iranee/ifreetime](https://github.com/iranee/ifreetime) 结合一下，并且写了一篇教程。
