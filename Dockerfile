@@ -1,4 +1,4 @@
-FROM node:slim as builder
+FROM node:22-slim AS builder
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ RUN npm install
 COPY ./ ./
 RUN npm run build
 
-FROM node:slim as production
+FROM node:22-slim AS production
 
 WORKDIR /app
 
