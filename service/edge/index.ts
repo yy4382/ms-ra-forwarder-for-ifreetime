@@ -1,4 +1,4 @@
-import { randomBytes } from 'crypto'
+import { randomBytes, randomUUID } from 'node:crypto'
 import { WebSocket } from 'ws'
 
 export const FORMAT_CONTENT_TYPE = new Map([
@@ -46,10 +46,10 @@ async function getURL() {
       .map((x) => x.toString(16).padStart(2, '0'))
       .join('')
   }
-  function randomUUID() {
-    return crypto.randomUUID().replaceAll('-', '')
+  function randomUUIDNoHyphen() {
+    return randomUUID().replaceAll('-', '')
   }
-  const connectionId = randomUUID().toLowerCase()
+  const connectionId = randomUUIDNoHyphen().toLowerCase()
   const TRUSTED_CLIENT_TOKEN = '6A5AA1D4EAFF4E9FB37E23D68491D6F4'
   const WIN_EPOCH = 11644473600 // 秒，从Windows纪元到Unix纪元的偏移量
   const S_TO_NS = BigInt(1e9)
