@@ -3,7 +3,7 @@
 > [!NOTE]
 > 推荐使用本人新编写的的另一个版本的微软文字转语音转换项目：[yy4382/read-aloud](https://github.com/yy4382/read-aloud)，
 > 它支持 Vercel, Cloudflare Workers, Docker 三种方式部署。  
-> 由于这个项目 (ms-ra-forwarder-for-ifreetime) 需要和上游同步以及上游所选技术栈的限制，可能更新不如新项目 ([read-aloud](https://github.com/yy4382/read-aloud)) 频繁。
+> 由于这个项目 (ms-ra-forwarder-for-ifreetime) 的上游最近完全重构了项目，而将本项目中的更改同步到重构中有些复杂，所以可能不会再积极更新当前这个项目了（bug 还是会修的，已经在使用的用户可以放心接着用），新用户可以直接使用 [yy4382/read-aloud](https://github.com/yy4382/read-aloud)。
 >
 > 如果不想要自建，也可以使用我在 CF Workers 上部署的实例，可以在 [新项目的置顶 Issue](https://github.com/yy4382/read-aloud/issues/1) 中找到。
 
