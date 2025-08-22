@@ -1,11 +1,11 @@
 # ms-ra-forwarder-for-ifreetime
 
 > [!NOTE]
-> 新 Cloudflare Workers 版本现已可用！[yy4382/read-aloud](https://github.com/yy4382/read-aloud)
-> 
-> 如果没有特殊需求，建议自建 Cloudflare Workers 版本。
+> 推荐使用本人新编写的的另一个版本的微软文字转语音转换项目：[yy4382/read-aloud](https://github.com/yy4382/read-aloud)，
+> 它支持 Vercel, Cloudflare Workers, Docker 三种方式部署。  
+> 由于这个项目 (ms-ra-forwarder-for-ifreetime) 需要和上游同步以及上游所选技术栈的限制，可能更新不如新项目 ([read-aloud](https://github.com/yy4382/read-aloud)) 频繁。
 >
-> 如果不想要自建，也可以使用我在 CF Workers 上部署的版本，可以在 [新项目的置顶 Issue](https://github.com/yy4382/read-aloud/issues/1) 中找到。
+> 如果不想要自建，也可以使用我在 CF Workers 上部署的实例，可以在 [新项目的置顶 Issue](https://github.com/yy4382/read-aloud/issues/1) 中找到。
 
 从 ms-ra-forwarder fork 这个项目的初衷是为了能够在爱阅书香中听“晓晓”念书。
 
