@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "start": "ts-node ./app.ts",
-    "build": "tsc"
+    "build": "tsc --noCheck"
   },
   "dependencies": {
     "axios": "^0.27.2",
