@@ -1,11 +1,10 @@
 {
+    "$schema": "https://openapi.vercel.sh/vercel.json",
     "routes": [
         {
             "src": "/",
             "dest": "/public"
         }
     ],
-    "env":{
-        "VERCEL": "true"
-    }
+    "framework": null
 }
