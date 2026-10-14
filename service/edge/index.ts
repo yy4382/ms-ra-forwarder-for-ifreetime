@@ -1,6 +1,11 @@
 import { randomBytes, randomUUID } from 'node:crypto'
 import { WebSocket } from 'ws'
-import { generateSecMsGec, TRUSTED_CLIENT_TOKEN } from './secMsGec'
+import {
+  EDGE_USER_AGENT,
+  generateSecMsGec,
+  SEC_MS_GEC_VERSION,
+  TRUSTED_CLIENT_TOKEN,
+} from './secMsGec'
 
 export const FORMAT_CONTENT_TYPE = new Map([
   ['raw-16khz-16bit-mono-pcm', 'audio/basic'],
@@ -39,20 +44,11 @@ interface PromiseExecutor {
   reject: (reason?: any) => void
 }
 
-// Constants
-
-// related project commits:
-// https://github.com/rany2/edge-tts/commit/cb6715f38d3132c6a3df256fb2471018fcfdde0a
-// https://github.com/rany2/edge-tts/commit/8da91459c8160ca7bc1cdedc8f7f6fd2137fa946
-const CHROMIUM_FULL_VERSION = '143.0.3650.75'
-const CHROMIUM_MAJOR_VERSION = CHROMIUM_FULL_VERSION.split('.')[0]
-const SEC_MS_GEC_VERSION = `2-${CHROMIUM_FULL_VERSION}`
-
 function randomUUIDNoHyphen() {
   return randomUUID().replaceAll('-', '')
 }
 
-export async function getURL() {
+async function getURL() {
   const connectionId = randomUUIDNoHyphen().toLowerCase()
   const secMsGec = await generateSecMsGec()
   return `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=${TRUSTED_CLIENT_TOKEN}&Sec-MS-GEC=${secMsGec}&Sec-MS-GEC-Version=${SEC_MS_GEC_VERSION}&ConnectionId=${connectionId}`
@@ -78,7 +74,7 @@ export class Service {
       host: 'speech.platform.bing.com',
       // origin: 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold',
       headers: {
-        'User-Agent': `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${CHROMIUM_MAJOR_VERSION}.0.0.0 Safari/537.36 Edg/${CHROMIUM_MAJOR_VERSION}.0.0.0`,
+        'User-Agent': EDGE_USER_AGENT,
         'Accept-Encoding': 'gzip, deflate, br, zstd', // not required by microsoft for now
         'Accept-Language': 'en-US,en;q=0.9', // not required by microsoft for now
         Pragma: 'no-cache', // not required by microsoft for now
