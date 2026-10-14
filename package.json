@@ -4,6 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
+    "test": "pnpm run build && node --test dist/tests/*.test.js",
     "start": "ts-node ./app.ts",
     "build": "tsc --noCheck"
   },
